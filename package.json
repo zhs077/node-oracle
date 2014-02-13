@@ -1,0 +1,27 @@
+{
+  "name": "zhsxlp007",
+  "version": "0.0.2",
+  "description": "zhsxlp",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhs077/node-oracle"
+  },
+  "keywords": [
+    "zhs077"
+  ],
+  "author": "zhs077",
+  "license": "BSD-2-Clause",
+  "gypfile": true,
+  "bugs": {
+    "url": "https://github.com/zhs077/node-oracle/issues"
+  },
+  "homepage": "https://github.com/zhs077/node-oracle"
+}
