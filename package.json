@@ -1,14 +1,13 @@
 {
   "name": "node-oracle",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Oracle database driver",
-  "keywords": ["database", "db", "oracle"],
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "nodeunit test\*",
+    "test": "nodeunit test",
     "install": "node-gyp rebuild"
   },
   "repository": {
@@ -16,9 +15,9 @@
     "url": "https://github.com/zhs077/node-oracle"
   },
   "keywords": [
-    "zhs077"
+    "database","db","oracle"
   ],
-  "author": "zhs077",
+  "author": "zhenghuashan",
   "license": "BSD-2-Clause",
   "gypfile": true,
   "bugs": {
