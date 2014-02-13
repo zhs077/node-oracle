@@ -1,13 +1,14 @@
 {
-  "name": "zhsxlp007",
-  "version": "0.0.2",
-  "description": "zhsxlp",
+  "name": "node-oracle",
+  "version": "0.0.1",
+  "description": "Oracle database driver",
+  "keywords": ["database", "db", "oracle"],
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nodeunit test\*",
     "install": "node-gyp rebuild"
   },
   "repository": {
