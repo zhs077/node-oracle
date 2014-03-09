@@ -309,8 +309,10 @@ void Connection::EIO_Query(uv_work_t* req)
 					case SQLT_AFC: //CHAR
 					 ostr >> str;
 					// output_t.rows.
-					 pstr = new char[desc[i].dbsize+1];
-					 memset(pstr,0,sizeof(desc[i].dbsize+1));
+					// pstr = new char[desc[i].dbsize+1];
+					 //memset(pstr,0,sizeof(desc[i].dbsize+1));
+					 pstr = new char[str.length()+1];
+					 memset(pstr,0,str.length()+1) ;
 					 memcpy(pstr,str.c_str(),str.length());
 					 row.values.push_back(pstr);
 					// cout<<pstr<<endl;
@@ -347,7 +349,13 @@ void Connection::EIO_Query(uv_work_t* req)
 					case SQLT_DAT:
 						ostr >> dv;
 						ss.str("");
-						ss<<dv.year<<"-"<<dv.month<<"-"<<dv.day<<" "<<dv.hour<<":"<<dv.minute<<":"<<dv.second;
+						ss<<dv.year<<"-"
+<<setfill('0')<<setw(2)<<dv.month<<"-"
+<<setfill('0')<<setw(2)<<dv.day<<" "
+<<setfill('0')<<setw(2)<<dv.hour<<":"
+<<setfill('0')<<setw(2)<<dv.minute<<":"
+<<setfill('0')<<setw(2)<<dv.second;
+						//ss<<dv.year<<"-"<<dv.month<<"-"<<dv.day<<" "<<dv.hour<<":"<<dv.minute<<":"<<dv.second;
 						if(ostr.is_null())
 						{
 							 pstr = new char[1];
