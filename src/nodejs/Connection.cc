@@ -11,11 +11,12 @@ Connection::Connection()
 
 Connection::~Connection()
 {
+	/* 此处不能在判断pConn是否NULL。即使它指向到地址已经不在来。2014-03-13
 	if(pConn)
 	{
 		delete pConn;
 		pConn = NULL;
-	}
+	}*/
 }
 
 void Connection::Init(Handle<Object>target)
