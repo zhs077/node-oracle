@@ -423,6 +423,7 @@ void Connection::EIO_After_Query(uv_work_t* req, int status)
 		int* pint = NULL;
 		int length=0;
 		char* buffer=NULL;
+		string utf8;
 		for (;it!= job->rows.end();++it,index++)
 		{
 			 Local<Object> obj= Object::New();
@@ -445,8 +446,12 @@ void Connection::EIO_After_Query(uv_work_t* req, int status)
 					delete []pstr;
 					delete []buffer;
 				#else
-					obj->Set(String::New(columm.column_name.c_str()),String::New(pstr));
+					utf8 =encodeConv::CodingConv::ascii2Utf8(pstr);
+
+						obj->Set(String::New(columm.column_name.c_str()),String::New(utf8.c_str()));
 					delete []pstr;
+					//obj->Set(String::New(columm.column_name.c_str()),String::New(pstr));
+					//delete []pstr;
 				#endif
 					
 					break;
