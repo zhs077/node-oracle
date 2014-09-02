@@ -1,4 +1,4 @@
-﻿
+
 #ifndef  _ORACLE_CLIENT_H
 #define _ORACLE_CLIENT_H
 #include <node.h>

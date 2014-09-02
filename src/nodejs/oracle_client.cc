@@ -47,9 +47,15 @@ Handle<Value>OracleClient::CreateConnPool(const Arguments& args)
 	Handle<Value> argv[1];
 	Handle<Object> connection = ConnctionPool::constructorTemplate->GetFunction()->NewInstance();
 	ConnctionPool* pool =ObjectWrap::Unwrap<ConnctionPool>(connection);//获取指针
-	string str_dblink = NodeFunc::ToCString(String::Utf8Value(args[0]));
-	string user_name = NodeFunc::ToCString(String::Utf8Value(args[1]));
-	string pass_word = NodeFunc::ToCString(String::Utf8Value(args[2]));
+	//string str_dblink = NodeFunc::ToCString(String::Utf8Value(args[0]));
+	//string user_name = NodeFunc::ToCString(String::Utf8Value(args[1]));
+	//string pass_word = NodeFunc::ToCString(String::Utf8Value(args[2]));
+	String::Utf8Value value1(args[0]);
+	String::Utf8Value value2(args[1]);
+	String::Utf8Value value3(args[2]);
+	string str_dblink = NodeFunc::ToCString(value1);
+	string user_name = NodeFunc::ToCString(value2);
+	string pass_word = NodeFunc::ToCString(value3);
 	unsigned int max_conn = args[3]->Int32Value();
 	unsigned int min_conn = args[4]->Int32Value();
 	static otlPool* p = pool->p_otl_pool;
