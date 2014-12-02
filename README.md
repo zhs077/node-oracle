@@ -15,4 +15,4 @@ export NLS_LANG=AMERICAN_AMERICA.ZHS16GBK
 
 
  注意
- windows 下vs2012编译会出现问题
+ windows 下vs2012编译会出现问题,请使用vs2010或vs2008编译。
